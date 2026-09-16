@@ -1,0 +1,45 @@
+# Dados brutos — nunca versionados (LGPD + volume)
+data/raw/**
+!data/raw/.gitkeep
+data/bronze/
+data/silver/
+data/gold/
+*.zip
+*.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Spark / Delta
+metastore_db/
+derby.log
+spark-warehouse/
+
+# dbt
+dbt/bolsa_familia/target/
+dbt/bolsa_familia/dbt_packages/
+dbt/bolsa_familia/logs/
+dbt/bolsa_familia/profiles.yml
+dbt/bolsa_familia/.user.yml
+.dbt/
+
+# Airflow
+airflow/logs/
+airflow/airflow.db
+airflow/airflow.cfg
+airflow/webserver_config.py
+
+# Segredos
+.env
+*.pem
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/

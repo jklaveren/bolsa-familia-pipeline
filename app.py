@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 st.set_page_config(
-    page_title="Pipeline Novo Bolsa Família | Analytics & ML",
+    page_title="Pipeline Novo Bolsa Família | Databricks & dbt",
     page_icon="🇧🇷",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -34,6 +34,7 @@ st.markdown("""
         margin-bottom: 20px;
     }
     .badge-success { background-color: #DEF7EC; color: #03543F; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 0.75rem; }
+    .badge-databricks { background-color: #FF3621; color: #FFFFFF; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 0.75rem; }
     </style>
 """, unsafe_allow_html=True)
 
@@ -41,21 +42,27 @@ st.markdown("""
 with st.sidebar:
     st.image("https://img.icons8.com/color/96/brazil.png", width=64)
     st.markdown("### **Bolsa Família Data Hub**")
-    st.markdown("Pipeline de Engenharia & Analytics Engineering")
+    st.markdown("Databricks + dbt + Spark + Airflow")
     st.markdown("---")
     
     selected_tab = st.radio(
         "Navegação Principal",
-        ["🚀 Visão Geral & Arquitetura", "📈 Machine Learning & Forecast", "🛡️ LGPD & Governança", "📋 Auditoria & Logs"]
+        [
+            "🚀 Visão Geral & Arquitetura", 
+            "⚡ Databricks & dbt Analytics", 
+            "📈 Machine Learning & Forecast", 
+            "🛡️ LGPD & Governança", 
+            "📋 Auditoria & Logs"
+        ]
     )
     
     st.markdown("---")
-    st.markdown("🛠️ **Stack:** PySpark | Delta Lake | dbt | Airflow")
+    st.markdown("🛠️ **Stack:** PySpark | Delta Lake | dbt-databricks | Airflow")
     st.markdown("👤 **Autora:** Jessica Van Klaveren")
 
 # Top Header
 st.markdown("<h1 style='color: #1E3A8A; margin-bottom: 0;'>🇧🇷 Pipeline Analítico do Novo Bolsa Família</h1>", unsafe_allow_html=True)
-st.markdown("<p style='color: #64748B; font-size: 1.1rem;'>Plataforma de processamento de microdados públicos da CGU com arquitetura Medalhão e Machine Learning.</p>", unsafe_allow_html=True)
+st.markdown("<p style='color: #64748B; font-size: 1.1rem;'>Plataforma end-to-end de Engenharia de Dados, Delta Lake, Databricks e Machine Learning.</p>", unsafe_allow_html=True)
 st.markdown("---")
 
 if selected_tab == "🚀 Visão Geral & Arquitetura":
@@ -81,9 +88,9 @@ if selected_tab == "🚀 Visão Geral & Arquitetura":
     with col3:
         st.markdown("""
             <div class='stMetric'>
-                <div class='metric-label'>Modelos Analíticos</div>
+                <div class='metric-label'>Modelos Databricks / dbt</div>
                 <div class='metric-value'>4 Gold</div>
-                <div style='color: #3B82F6; font-size: 0.8rem; margin-top: 5px;'>Staging → Marts (dbt)</div>
+                <div style='color: #FF3621; font-size: 0.8rem; margin-top: 5px;'>Staging → Marts (Databricks)</div>
             </div>
         """, unsafe_allow_html=True)
     with col4:
@@ -101,13 +108,13 @@ if selected_tab == "🚀 Visão Geral & Arquitetura":
     with col_l:
         st.markdown("""
             <div class='card'>
-                <h3 style='color: #1E3A8A; margin-top: 0;'>🏗️ Arquitetura Medalhão</h3>
-                <p>O pipeline foi construído seguindo rigorosamente os padrões de engenharia de dados moderna:</p>
+                <h3 style='color: #1E3A8A; margin-top: 0;'>🏗️ Arquitetura Medalhão & Databricks</h3>
+                <p>O projeto integra processamento distribuído local e nuvem com Databricks:</p>
                 <ul>
-                    <li><b>Bronze (PySpark & Delta):</b> Inspeciona e armazena os CSVs brutos da CGU particionados por mês de competência.</li>
-                    <li><b>Silver (Limpeza & LGPD):</b> Normalização de tipos monetários e pseudonimização criptográfica do NIS (SHA-256) com remoção completa de nomes.</li>
-                    <li><b>Gold (dbt & Databricks):</b> Transformações analíticas dimensionais com testes declarativos integrados.</li>
-                    <li><b>Orquestração (Airflow):</b> Execução automatizada e resiliente via containers Docker.</li>
+                    <li><b>Bronze (PySpark & Delta):</b> Ingestão e particionamento dos CSVs da CGU em Delta Lake.</li>
+                    <li><b>Silver (Limpeza & LGPD):</b> Normalização e pseudonimização criptográfica do NIS (SHA-256) com remoção de PII.</li>
+                    <li><b>Gold (<span style='color: #FF3621; font-weight: bold;'>Databricks + dbt</span>):</b> Transformações analíticas rodando nativamente na nuvem com dbt-databricks.</li>
+                    <li><b>Orquestração (Airflow):</b> Pipeline automatizado ponta a ponta.</li>
                 </ul>
             </div>
         """, unsafe_allow_html=True)
@@ -117,10 +124,39 @@ if selected_tab == "🚀 Visão Geral & Arquitetura":
             <div class='card'>
                 <h3 style='color: #1E3A8A; margin-top: 0;'>⚡ Status do Pipeline</h3>
                 <p>Última execução monitorada via API do Airflow:</p>
-                <p><span class='badge-success'>SUCCESS</span> <b>ingest_bronze</b> (Processado com Delta)</p>
+                <p><span class='badge-success'>SUCCESS</span> <b>ingest_bronze</b> (Delta Lake)</p>
                 <p><span class='badge-success'>SUCCESS</span> <b>clean_silver</b> (19.4M linhas limpas)</p>
-                <p><span class='badge-success'>SUCCESS</span> <b>dbt_run</b> (Modelos Gold atualizados)</p>
+                <p><span class='badge-databricks'>DATABRICKS</span> <b>dbt_run</b> (Modelos Gold na nuvem)</p>
                 <p><span class='badge-success'>SUCCESS</span> <b>dbt_test</b> (13 testes aprovados)</p>
+            </div>
+        """, unsafe_allow_html=True)
+
+elif selected_tab == "⚡ Databricks & dbt Analytics":
+    st.markdown("### ⚡ Camada Gold no Databricks com dbt")
+    st.markdown("Transformação analítica avançada executada diretamente sobre clusters Databricks Community Edition usando `dbt-databricks`.")
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("""
+            <div class='card'>
+                <h4 style='color: #FF3621; margin-top: 0;'>🔗 Integração dbt-databricks</h4>
+                <p>O projeto configura o conector oficial <code>dbt-databricks</code> conectado via JDBC/HTTP Path:</p>
+                <ul>
+                    <li><b>Staging Layer:</b> Limpeza, renomeação de colunas e tipagem em cima da camada Silver.</li>
+                    <li><b>Marts Layer:</b> Agregações analíticas por UF, mês de competência e série histórica nacional.</li>
+                    <li><b>Testes Declarativos:</b> 13 testes executados nativamente no Databricks (unicidade de chaves, não-nulos e relações).</li>
+                </ul>
+            </div>
+        """, unsafe_allow_html=True)
+    with col2:
+        st.markdown("""
+            <div class='card'>
+                <h4 style='color: #1E3A8A; margin-top: 0;'>📊 Documentação & Linhagem (dbt docs)</h4>
+                <p>O dbt gera automaticamente o catálogo de dados e o grafo de linhagem (Lineage Graph):</p>
+                <ul>
+                    <li><b>Transparência:</b> Rastreabilidade de ponta a ponta desde a ingestão Bronze até as tabelas finais Gold.</li>
+                    <li><b>GitHub Pages:</b> Publicação contínua da documentação em <code>https://jklaveren.github.io/bolsa-familia-pipeline/</code>.</li>
+                </ul>
             </div>
         """, unsafe_allow_html=True)
 

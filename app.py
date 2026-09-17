@@ -6,13 +6,13 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 st.set_page_config(
-    page_title="Pipeline Novo Bolsa Família | Databricks & dbt",
+    page_title="Pipeline Novo Bolsa Família | Data Hub & ML",
     page_icon="🇧🇷",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for high-end UI/UX
+# Custom CSS for ultra-modern UI/UX
 st.markdown("""
     <style>
     .main { background-color: #F8FAFC; }
@@ -51,6 +51,7 @@ with st.sidebar:
             "🚀 Visão Geral & Arquitetura", 
             "⚡ Databricks & dbt Analytics", 
             "📈 Machine Learning & Forecast", 
+            "💻 Código & Componentes",
             "🛡️ LGPD & Governança", 
             "📋 Auditoria & Logs"
         ]
@@ -214,6 +215,64 @@ elif selected_tab == "📈 Machine Learning & Forecast":
         fig.update_xaxes(gridcolor="#E2E8F0")
         
         st.plotly_chart(fig, use_container_width=True)
+        
+        # Download button for JSON report
+        st.download_button(
+            label="📥 Baixar Relatório Completo de Predições (JSON)",
+            data=json.dumps(data, indent=2, ensure_ascii=False),
+            file_name="relatorio_previsoes_bolsa_familia.json",
+            mime="application/json"
+        )
+
+elif selected_tab == "💻 Código & Componentes":
+    st.markdown("### 💻 Componentes de Código do Pipeline")
+    st.markdown("Explore trechos oficiais dos scripts de engenharia, dbt e orquestração.")
+    
+    tab_code1, tab_code2, tab_code3 = st.tabs(["PySpark (Silver)", "dbt Model (Gold)", "Airflow DAG"])
+    
+    with tab_code1:
+        st.code("""
+# src/silver/clean.py - Exemplo de pseudonimização LGPD
+def clean_silver(spark: SparkSession, competencia: str, salt: str) -> None:
+    bronze_df = spark.read.format("delta").load(f"data/bronze/competencia={competencia}")
+    
+    cleaned = (
+        bronze_df
+        .withColumn("nis_hash", sha256(concat_ws("", col("nis"), lit(salt))))
+        .drop("nome_beneficiario")  # Expurgo de PII
+    )
+    cleaned.write.format("delta").mode("append").save("data/silver/pagamentos")
+        """, language="python")
+        
+    with tab_code2:
+        st.code("""
+-- dbt/bolsa_familia/models/marts/marts_pagamentos_uf.sql
+select
+    uf,
+    mes_competencia,
+    sum(valor_parcela) as valor_total,
+    count(distinct nis_hash) as beneficiarios_unicos
+from {{ ref('stg_pagamentos') }}
+group by 1, 2
+        """, language="sql")
+        
+    with tab_code3:
+        st.code("""
+# dags/bolsa_familia_pipeline_dag.py
+ingest_bronze = PythonOperator(
+    task_id="ingest_bronze",
+    python_callable=_ingest_bronze,
+)
+clean_silver = PythonOperator(
+    task_id="clean_silver",
+    python_callable=_clean_silver,
+)
+dbt_run = BashOperator(
+    task_id="dbt_run",
+    bash_command=f"cd {DBT_PROJECT_DIR} && dbt deps && dbt run --profiles-dir .",
+)
+ingest_bronze >> clean_silver >> dbt_run
+        """, language="python")
 
 elif selected_tab == "🛡️ LGPD & Governança":
     st.markdown("### 🛡️ Privacidade e Conformidade com a LGPD (Lei 13.709/2018)")

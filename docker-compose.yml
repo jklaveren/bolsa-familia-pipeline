@@ -57,6 +57,17 @@ services:
     command: scheduler
     restart: always
 
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./app.py:/app/app.py
+      - ./docs:/app/docs
+    restart: always
+
 volumes:
   postgres-db:
   airflow-logs:

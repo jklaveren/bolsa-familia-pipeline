@@ -2,10 +2,13 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-RUN pip install --no-cache-dir streamlit plotly pandas
+RUN pip install --no-cache-dir streamlit plotly pandas google-generativeai python-dotenv
 
 COPY app.py /app/app.py
+COPY src /app/src
 COPY docs /app/docs
+COPY resume.txt /app/resume.txt
+COPY sample_job.txt /app/sample_job.txt
 
 EXPOSE 8501
 

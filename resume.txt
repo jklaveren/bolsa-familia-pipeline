@@ -15,11 +15,11 @@ COMPETÊNCIAS TÉCNICAS:
 
 EXPERIÊNCIA PROFISSIONAL:
 
-Engenheira de Dados / Desenvolvedora Full Stack — WhoDados (Plataforma de BI & Dados Públicos)
+Engenheira de Dados / Desenvolvedora Full Stack — WhoDados (Cliente B2B: NRA Advocacia)
 fevereiro de 2026 – atual
-- Idealizei, desenvolvi e mantenho a WhoDados, plataforma de Business Intelligence em produção utilizada para pesquisa de empresas, investigação de sócios e visualização de dados públicos federais.
-- Estruturei a arquitetura em nuvem utilizando FastAPI com autenticação JWT no backend e Google BigQuery como Data Warehouse corporativo para processamento analítico de grandes volumes.
-- Desenvolvi pipelines de ETL automatizados para ingestão, tratamento e consolidação de dados públicos da Receita Federal e órgãos governamentais, garantindo consistência e disponibilidade para consulta.
+- Idealizei, desenvolvi e mantenho em produção a WhoDados, plataforma de Business Intelligence e investigação corporativa utilizada ativamente pelo escritório NRA Advocacia para pesquisa de empresas, análise de sócios e monitoramento de dívidas ativas federais.
+- Estruturei a arquitetura full-stack na nuvem utilizando Next.js (Vercel) no frontend, FastAPI com autenticação JWT (Render) no backend e PostgreSQL (Supabase) como banco relacional.
+- Desenvolvi pipelines de ETL automatizados em Python para ingestão, tratamento e consolidação de bases públicas federais (Receita Federal e PGFN), garantindo dados limpos e atualizados para tomada de decisão jurídica e comercial.
 
 Engenheira de Dados Sênior / Desenvolvedora Backend — Sistema de Inteligência Imobiliária (Projeto Próprio)
 fevereiro de 2026 – atual

@@ -1,4 +1,4 @@
-# Sistema de Inteligência Empresarial e Dados Públicos — WhoDados
+# Sistema de Inteligência Empresarial e Dados Públicos — WhoDados (Cliente B2B: NRA Advocacia)
 
 > 📦 **Stack da Aplicação:** Next.js + FastAPI + Supabase (PostgreSQL) + ETL Python.
 
@@ -6,7 +6,7 @@
 
 ## 📌 Visão Geral
 
-O WhoDados é uma plataforma de inteligência empresarial em produção que permite:
+O WhoDados é uma plataforma de inteligência empresarial **em produção e utilizada ativamente pelo cliente B2B NRA Advocacia**, permitindo:
 - Analisar empresas do Rio Grande do Sul e dados cadastrais federais.
 - Investigar sócios e grupos econômicos.
 - Visualizar dívidas ativas (FGTS, Previdenciário, Não Previdenciário).

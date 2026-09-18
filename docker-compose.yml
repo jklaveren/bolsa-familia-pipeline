@@ -61,6 +61,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.streamlit
+    env_file:
+      - .env
     ports:
       - "8501:8501"
     volumes:

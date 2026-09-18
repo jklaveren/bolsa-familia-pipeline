@@ -13,7 +13,7 @@ def _get_active_model():
     except Exception:
         available_models = []
 
-    models_to_try = [m for m in available_models if 'flash' in m or 'pro' in m] + available_models + ["gemini-1.5-flash", "gemini-pro"]
+    models_to_try = ["gemini-3.6-flash", "gemini-1.5-flash", "gemini-2.0-flash", "gemini-pro"] + [m for m in available_models if 'flash' in m or 'pro' in m] + available_models
     seen = set()
     models_to_try = [x for x in models_to_try if not (x in seen or seen.add(x))]
 

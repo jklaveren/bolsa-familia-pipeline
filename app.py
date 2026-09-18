@@ -251,8 +251,29 @@ elif selected_tab == "🤖 AI Job Matcher (ATS)":
                 default_job = f.read()
         job_input = st.text_area("📋 Descrição da Vaga", value=default_job, height=250)
         
-    api_key_input = st.text_input("🔑 Google Gemini API Key (Deixe em branco se configurada no ambiente)", type="password")
+    existing_env_key = os.getenv("GEMINI_API_KEY", "")
+    api_key_input = st.text_input("🔑 Google Gemini API Key", value=existing_env_key, type="password")
     
+    if st.button("💾 Salvar Chave Permanentemente"):
+        if api_key_input:
+            env_path = ".env"
+            env_lines = []
+            if os.path.exists(env_path):
+                with open(env_path, "r", encoding="utf-8") as f:
+                    env_lines = f.readlines()
+            
+            # Remove old key if present
+            env_lines = [line for line in env_lines if not line.startswith("GEMINI_API_KEY=")]
+            env_lines.append(f'GEMINI_API_KEY="{api_key_input.strip()}"\n')
+            
+            with open(env_path, "w", encoding="utf-8") as f:
+                f.writelines(env_lines)
+            
+            os.environ["GEMINI_API_KEY"] = api_key_input.strip()
+            st.success("Chave da API salva com sucesso no arquivo .env!")
+        else:
+            st.warning("Insira uma chave válida antes de salvar.")
+
     tab_ai1, tab_ai2, tab_ai3 = st.tabs(["🎯 1. Análise de Match & Recomendações", "✍️ 2. Currículo Otimizado (Tailored)", "✉️ 3. Carta de Apresentação"])
     
     key = api_key_input.strip() if api_key_input else os.getenv("GEMINI_API_KEY")

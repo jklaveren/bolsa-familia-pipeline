@@ -68,6 +68,8 @@ services:
     volumes:
       - ./app.py:/app/app.py
       - ./docs:/app/docs
+      - ./resume.txt:/app/resume.txt
+      - ./sample_job.txt:/app/sample_job.txt
     restart: always
 
 volumes:

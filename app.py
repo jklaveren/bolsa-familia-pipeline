@@ -1,5 +1,12 @@
 import json
 import os
+import sys
+
+# Garante que o diretório atual está no PYTHONPATH para importar src
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.append(current_dir)
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px

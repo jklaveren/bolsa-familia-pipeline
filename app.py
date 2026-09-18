@@ -4,9 +4,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+from src.job_analyzer.matcher import analyze_job_match
 
 st.set_page_config(
-    page_title="Pipeline Novo Bolsa Família | Data Hub & ML",
+    page_title="Pipeline Novo Bolsa Família | Data Hub & AI",
     page_icon="🇧🇷",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -42,7 +43,7 @@ st.markdown("""
 with st.sidebar:
     st.image("https://img.icons8.com/color/96/brazil.png", width=64)
     st.markdown("### **Bolsa Família Data Hub**")
-    st.markdown("Databricks + dbt + Spark + Airflow")
+    st.markdown("Databricks + dbt + Spark + Gemini AI")
     st.markdown("---")
     
     selected_tab = st.radio(
@@ -51,6 +52,7 @@ with st.sidebar:
             "🚀 Visão Geral & Arquitetura", 
             "⚡ Databricks & dbt Analytics", 
             "📈 Machine Learning & Forecast", 
+            "🤖 AI Job Matcher (ATS)",
             "💻 Código & Componentes",
             "🛡️ LGPD & Governança", 
             "📋 Auditoria & Logs"
@@ -58,12 +60,12 @@ with st.sidebar:
     )
     
     st.markdown("---")
-    st.markdown("🛠️ **Stack:** PySpark | Delta Lake | dbt-databricks | Airflow")
+    st.markdown("🛠️ **Stack:** PySpark | Delta Lake | dbt | Gemini AI")
     st.markdown("👤 **Autora:** Jessica Van Klaveren")
 
 # Top Header
 st.markdown("<h1 style='color: #1E3A8A; margin-bottom: 0;'>🇧🇷 Pipeline Analítico do Novo Bolsa Família</h1>", unsafe_allow_html=True)
-st.markdown("<p style='color: #64748B; font-size: 1.1rem;'>Plataforma end-to-end de Engenharia de Dados, Delta Lake, Databricks e Machine Learning.</p>", unsafe_allow_html=True)
+st.markdown("<p style='color: #64748B; font-size: 1.1rem;'>Plataforma end-to-end de Engenharia de Dados, Delta Lake, Databricks e Assistente de Carreira com IA.</p>", unsafe_allow_html=True)
 st.markdown("---")
 
 if selected_tab == "🚀 Visão Geral & Arquitetura":
@@ -216,13 +218,46 @@ elif selected_tab == "📈 Machine Learning & Forecast":
         
         st.plotly_chart(fig, use_container_width=True)
         
-        # Download button for JSON report
         st.download_button(
             label="📥 Baixar Relatório Completo de Predições (JSON)",
             data=json.dumps(data, indent=2, ensure_ascii=False),
             file_name="relatorio_previsoes_bolsa_familia.json",
             mime="application/json"
         )
+
+elif selected_tab == "🤖 AI Job Matcher (ATS)":
+    st.markdown("### 🤖 Assistente de Carreira com Google Gemini (ATS Matcher)")
+    st.markdown("Cole o seu currículo e a descrição de uma vaga de Engenharia de Dados para calcular o *match* e receber sugestões de otimização ATS.")
+    
+    col_a, col_b = st.columns(2)
+    with col_a:
+        default_resume = ""
+        if os.path.exists("resume.txt"):
+            with open("resume.txt", "r", encoding="utf-8") as f:
+                default_resume = f.read()
+        resume_input = st.text_area("📄 Seu Currículo (Texto)", value=default_resume, height=250)
+        
+    with col_b:
+        default_job = ""
+        if os.path.exists("sample_job.txt"):
+            with open("sample_job.txt", "r", encoding="utf-8") as f:
+                default_job = f.read()
+        job_input = st.text_area("📋 Descrição da Vaga", value=default_job, height=250)
+        
+    api_key_input = st.text_input("🔑 Google Gemini API Key (Deixe em branco se configurada no ambiente)", type="password")
+    
+    if st.button("🚀 Analisar Compatibilidade com IA", type="primary"):
+        if not resume_input or not job_input:
+            st.warning("Por favor, preencha o currículo e a descrição da vaga.")
+        else:
+            with st.spinner("Analisando currículo com Google Gemini..."):
+                try:
+                    key = api_key_input.strip() if api_key_input else os.getenv("GEMINI_API_KEY")
+                    resultado = analyze_job_match(resume_input, job_input, api_key=key)
+                    st.markdown("### 🎯 Resultado da Análise ATS")
+                    st.markdown(resultado)
+                except Exception as e:
+                    st.error(f"Erro ao executar a análise: {e}")
 
 elif selected_tab == "💻 Código & Componentes":
     st.markdown("### 💻 Componentes de Código do Pipeline")

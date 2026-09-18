@@ -1,26 +1,17 @@
 import json
 import os
-import sys
-
-# Garante que o diretório atual está no PYTHONPATH para importar src
-current_dir = os.path.dirname(os.path.abspath(__file__))
-if current_dir not in sys.path:
-    sys.path.append(current_dir)
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from src.job_analyzer.matcher import analyze_job_match, tailor_resume, generate_cover_letter
 
 st.set_page_config(
-    page_title="Pipeline Novo Bolsa Família | Data Hub & AI",
+    page_title="Pipeline Novo Bolsa Família | Databricks & PySpark",
     page_icon="🇧🇷",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for ultra-modern UI/UX
 st.markdown("""
     <style>
     .main { background-color: #F8FAFC; }
@@ -28,10 +19,10 @@ st.markdown("""
         background-color: #FFFFFF;
         padding: 18px;
         border-radius: 12px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         border: 1px solid #E2E8F0;
     }
-    .metric-label { font-size: 0.85rem; color: #64748B; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .metric-label { font-size: 0.85rem; color: #64748B; font-weight: 600; text-transform: uppercase; }
     .metric-value { font-size: 1.8rem; color: #1E3A8A; font-weight: 800; }
     .card {
         background: #FFFFFF;
@@ -46,11 +37,10 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Sidebar
 with st.sidebar:
     st.image("https://img.icons8.com/color/96/brazil.png", width=64)
     st.markdown("### **Bolsa Família Data Hub**")
-    st.markdown("Databricks + dbt + Spark + Gemini AI")
+    st.markdown("Databricks + dbt + Spark + Airflow")
     st.markdown("---")
     
     selected_tab = st.radio(
@@ -58,21 +48,18 @@ with st.sidebar:
         [
             "🚀 Visão Geral & Arquitetura", 
             "⚡ Databricks & dbt Analytics", 
-            "📈 Machine Learning & Forecast", 
-            "🤖 AI Job Matcher (ATS)",
-            "💻 Código & Componentes",
+            "📈 Machine Learning (VAR vs NN)", 
             "🛡️ LGPD & Governança", 
             "📋 Auditoria & Logs"
         ]
     )
     
     st.markdown("---")
-    st.markdown("🛠️ **Stack:** PySpark | Delta Lake | dbt | Gemini AI")
+    st.markdown("🛠️ **Stack:** PySpark 3.5 | Delta Lake | dbt | Airflow")
     st.markdown("👤 **Autora:** Jessica Van Klaveren")
 
-# Top Header
 st.markdown("<h1 style='color: #1E3A8A; margin-bottom: 0;'>🇧🇷 Pipeline Analítico do Novo Bolsa Família</h1>", unsafe_allow_html=True)
-st.markdown("<p style='color: #64748B; font-size: 1.1rem;'>Plataforma end-to-end de Engenharia de Dados, Delta Lake, Databricks e Assistente de Carreira com IA.</p>", unsafe_allow_html=True)
+st.markdown("<p style='color: #64748B; font-size: 1.1rem;'>Plataforma end-to-end de Engenharia de Dados sobre microdados da CGU (Portal da Transparência).</p>", unsafe_allow_html=True)
 st.markdown("---")
 
 if selected_tab == "🚀 Visão Geral & Arquitetura":
@@ -124,7 +111,7 @@ if selected_tab == "🚀 Visão Geral & Arquitetura":
                     <li><b>Bronze (PySpark & Delta):</b> Ingestão e particionamento dos CSVs da CGU em Delta Lake.</li>
                     <li><b>Silver (Limpeza & LGPD):</b> Normalização e pseudonimização criptográfica do NIS (SHA-256) com remoção de PII.</li>
                     <li><b>Gold (<span style='color: #FF3621; font-weight: bold;'>Databricks + dbt</span>):</b> Transformações analíticas rodando nativamente na nuvem com dbt-databricks.</li>
-                    <li><b>Orquestração (Airflow):</b> Pipeline automatizado ponta a ponta.</li>
+                    <li><b>Orquestração (Airflow):</b> Pipeline automatizado ponta a ponta via Docker Compose.</li>
                 </ul>
             </div>
         """, unsafe_allow_html=True)
@@ -170,7 +157,7 @@ elif selected_tab == "⚡ Databricks & dbt Analytics":
             </div>
         """, unsafe_allow_html=True)
 
-elif selected_tab == "📈 Machine Learning & Forecast":
+elif selected_tab == "📈 Machine Learning (VAR vs NN)":
     st.markdown("### 📈 Previsão de Séries Temporais: VAR vs Deep Learning")
     st.markdown("Comparação de acurácia entre modelo econométrico multivariado (VAR) e Rede Neural Densa para o valor total de pagamentos.")
     
@@ -231,138 +218,6 @@ elif selected_tab == "📈 Machine Learning & Forecast":
             file_name="relatorio_previsoes_bolsa_familia.json",
             mime="application/json"
         )
-
-elif selected_tab == "🤖 AI Job Matcher (ATS)":
-    st.markdown("### 🤖 Assistente de Carreira com Google Gemini (ATS Matcher & Otimizador)")
-    st.markdown("Use a IA para analisar compatibilidade, reescrever seu currículo otimizado para ATS e gerar cartas de apresentação.")
-    
-    col_a, col_b = st.columns(2)
-    with col_a:
-        default_resume = ""
-        if os.path.exists("resume.txt"):
-            with open("resume.txt", "r", encoding="utf-8") as f:
-                default_resume = f.read()
-        resume_input = st.text_area("📄 Seu Currículo (Extraído do docx)", value=default_resume, height=250)
-        
-    with col_b:
-        default_job = ""
-        if os.path.exists("sample_job.txt"):
-            with open("sample_job.txt", "r", encoding="utf-8") as f:
-                default_job = f.read()
-        job_input = st.text_area("📋 Descrição da Vaga", value=default_job, height=250)
-        
-    existing_env_key = os.getenv("GEMINI_API_KEY", "")
-    api_key_input = st.text_input("🔑 Google Gemini API Key", value=existing_env_key, type="password")
-    
-    if st.button("💾 Salvar Chave Permanentemente"):
-        if api_key_input:
-            env_path = ".env"
-            env_lines = []
-            if os.path.exists(env_path):
-                with open(env_path, "r", encoding="utf-8") as f:
-                    env_lines = f.readlines()
-            
-            # Remove old key if present
-            env_lines = [line for line in env_lines if not line.startswith("GEMINI_API_KEY=")]
-            env_lines.append(f'GEMINI_API_KEY="{api_key_input.strip()}"\n')
-            
-            with open(env_path, "w", encoding="utf-8") as f:
-                f.writelines(env_lines)
-            
-            os.environ["GEMINI_API_KEY"] = api_key_input.strip()
-            st.success("Chave da API salva com sucesso no arquivo .env!")
-        else:
-            st.warning("Insira uma chave válida antes de salvar.")
-
-    tab_ai1, tab_ai2, tab_ai3 = st.tabs(["🎯 1. Análise de Match & Recomendações", "✍️ 2. Currículo Otimizado (Tailored)", "✉️ 3. Carta de Apresentação"])
-    
-    key = api_key_input.strip() if api_key_input else os.getenv("GEMINI_API_KEY")
-
-    with tab_ai1:
-        if st.button("🚀 Executar Análise de Match", type="primary"):
-            if not resume_input or not job_input:
-                st.warning("Preencha o currículo e a descrição da vaga.")
-            else:
-                with st.spinner("Analisando compatibilidade ATS com Gemini..."):
-                    try:
-                        res = analyze_job_match(resume_input, job_input, api_key=key)
-                        st.markdown(res)
-                    except Exception as e:
-                        st.error(f"Erro: {e}")
-
-    with tab_ai2:
-        if st.button("✍️ Gerar Currículo Otimizado para esta Vaga", type="primary"):
-            if not resume_input or not job_input:
-                st.warning("Preencha o currículo e a descrição da vaga.")
-            else:
-                with st.spinner("Reescrevendo e otimizando currículo com Gemini..."):
-                    try:
-                        res = tailor_resume(resume_input, job_input, api_key=key)
-                        st.markdown(res)
-                    except Exception as e:
-                        st.error(f"Erro: {e}")
-
-    with tab_ai3:
-        if st.button("✉️ Gerar Carta de Apresentação", type="primary"):
-            if not resume_input or not job_input:
-                st.warning("Preencha o currículo e a descrição da vaga.")
-            else:
-                with st.spinner("Escrevendo carta de apresentação com Gemini..."):
-                    try:
-                        res = generate_cover_letter(resume_input, job_input, api_key=key)
-                        st.markdown(res)
-                    except Exception as e:
-                        st.error(f"Erro: {e}")
-
-elif selected_tab == "💻 Código & Componentes":
-    st.markdown("### 💻 Componentes de Código do Pipeline")
-    st.markdown("Explore trechos oficiais dos scripts de engenharia, dbt e orquestração.")
-    
-    tab_code1, tab_code2, tab_code3 = st.tabs(["PySpark (Silver)", "dbt Model (Gold)", "Airflow DAG"])
-    
-    with tab_code1:
-        st.code("""
-# src/silver/clean.py - Exemplo de pseudonimização LGPD
-def clean_silver(spark: SparkSession, competencia: str, salt: str) -> None:
-    bronze_df = spark.read.format("delta").load(f"data/bronze/competencia={competencia}")
-    
-    cleaned = (
-        bronze_df
-        .withColumn("nis_hash", sha256(concat_ws("", col("nis"), lit(salt))))
-        .drop("nome_beneficiario")  # Expurgo de PII
-    )
-    cleaned.write.format("delta").mode("append").save("data/silver/pagamentos")
-        """, language="python")
-        
-    with tab_code2:
-        st.code("""
--- dbt/bolsa_familia/models/marts/marts_pagamentos_uf.sql
-select
-    uf,
-    mes_competencia,
-    sum(valor_parcela) as valor_total,
-    count(distinct nis_hash) as beneficiarios_unicos
-from {{ ref('stg_pagamentos') }}
-group by 1, 2
-        """, language="sql")
-        
-    with tab_code3:
-        st.code("""
-# dags/bolsa_familia_pipeline_dag.py
-ingest_bronze = PythonOperator(
-    task_id="ingest_bronze",
-    python_callable=_ingest_bronze,
-)
-clean_silver = PythonOperator(
-    task_id="clean_silver",
-    python_callable=_clean_silver,
-)
-dbt_run = BashOperator(
-    task_id="dbt_run",
-    bash_command=f"cd {DBT_PROJECT_DIR} && dbt deps && dbt run --profiles-dir .",
-)
-ingest_bronze >> clean_silver >> dbt_run
-        """, language="python")
 
 elif selected_tab == "🛡️ LGPD & Governança":
     st.markdown("### 🛡️ Privacidade e Conformidade com a LGPD (Lei 13.709/2018)")

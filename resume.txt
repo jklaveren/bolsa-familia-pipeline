@@ -1,11 +1,28 @@
 Jessica Van Klaveren
-Engenheira de Dados Pleno / Analytics Engineer
+Engenheira de Dados Pleno / Analytics Engineer | São Paulo, SP
+email: jessica@example.com | github.com/jklaveren
 
-EXPERIÊNCIA:
-- Pipeline de Dados Novo Bolsa Família: Ingestão e limpeza em PySpark, Delta Lake, transformação com dbt-databricks, orquestração em Apache Airflow (Docker Compose), CI/CD no GitHub Actions.
-- Tratamento e pseudonimização de PII (LGPD) via SHA-256.
-- Modelagem analítica dimensional (Layer Staging e Marts).
-- Previsão de séries temporais (VAR vs Machine Learning em Python).
+RESUMO PROFISSIONAL:
+Engenheira de Dados com sólida experiência em arquitetura de dados em nuvem (Databricks), processamento distribuído (PySpark, Delta Lake), Analytics Engineering (dbt) e orquestração de pipelines (Apache Airflow, Docker, CI/CD). Especialista em governança de dados, conformidade com LGPD e automação de processos baseada em IA e LLMs.
 
-STACK:
-Python, PySpark, Delta Lake, dbt, Databricks, Apache Airflow, SQL, Docker, Git, CI/CD, pytest.
+EXPERIÊNCIA RECENTE:
+- Pipeline de Dados End-to-End & Lakehouse (Novo Bolsa Família / CGU):
+  * Desenvolvimento de arquitetura medalhão (Bronze, Silver, Gold) em PySpark 3.5 e Delta Lake, processando 242+ milhões de registros de microdados governamentais.
+  * Implementação de rotinas de pseudonimização de PII (NIS) utilizando SHA-256 com Salt criptográfico e expurgo de dados sensíveis para conformidade com a LGPD (Lei 13.709/2018).
+  * Construção de modelos analíticos dimensionais (staging e marts) no Databricks utilizando dbt, com 13 testes declarativos automatizados de schema e integridade.
+  * Orquestração completa do pipeline (Bronze ➔ Silver ➔ Gold ➔ Testes) via Apache Airflow (Docker Compose) e GitHub Actions (CI/CD).
+  * Desenvolvimento de modelos preditivos de séries temporais (VAR vs Machine Learning) e Assistente Inteligente com Google Gemini (LLM) para automação e otimização de compatibilidade de vagas (ATS).
+
+STACK TECNOLÓGICA:
+- Linguagens: Python, SQL
+- Big Data & Lakehouse: PySpark, Delta Lake, Databricks, dbt (Data Build Tool)
+- Orquestração & DevOps: Apache Airflow, Docker, Docker Compose, Git, GitHub Actions, Linux
+- Bancos de Dados & Armazenamento: PostgreSQL, Parquet, Delta
+- IA & APIs: Google Gemini API, Streamlit, Pandas, Scikit-learn, Statsmodels
+
+IDIOMAS:
+- Inglês: Intermediário / Avançado (Leitura técnica fluída, conversação funcional)
+- Espanhol: Básico
+
+FORMAÇÃO:
+- Graduação em Ciência da Computação / Engenharia

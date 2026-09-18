@@ -9,8 +9,10 @@ def analyze_job_match(resume_text: str, job_description: str, api_key: str = Non
         raise ValueError("GEMINI_API_KEY nao encontrada nas variaveis de ambiente ou parametros.")
     
     genai.configure(api_key=key)
-    model = genai.GenerativeModel("gemini-1.5-flash")
-
+    
+    models_to_try = ["gemini-1.5-flash", "gemini-1.5-flash-latest", "gemini-2.0-flash", "gemini-pro"]
+    last_error = None
+    
     prompt = f"""
 Atue como um recrutador técnico especialista em ATS (Applicant Tracking System) e Engenharia de Dados.
 Compare o currículo abaixo com a descrição da vaga e forneça uma análise estruturada em Markdown contendo:
@@ -26,5 +28,13 @@ DESCRIÇÃO DA VAGA:
 {job_description}
 """
 
-    response = model.generate_content(prompt)
-    return response.text
+    for m_name in models_to_try:
+        try:
+            mod = genai.GenerativeModel(m_name)
+            response = mod.generate_content(prompt)
+            return response.text
+        except Exception as e:
+            last_error = e
+            continue
+            
+    raise RuntimeError(f"Nao foi possivel conectar a nenhum modelo Gemini. Ultimo erro: {last_error}")

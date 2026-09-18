@@ -3,23 +3,24 @@ Engenheira de Dados Sênior / Analytics Engineer
 klaverenjv@gmail.com   |   linkedin.com/in/jessicanolin   |   github.com/jklaveren   |   São Leopoldo, RS – Brasil
 
 RESUMO PROFISSIONAL:
-Engenheira de Dados Sênior com sólida formação quantitativa em Ciências Econômicas e Econometria, especializada na construção de arquiteturas Data Lakehouse (Databricks, Google BigQuery), processamento distribuído de Big Data (PySpark, Delta Lake) e Analytics Engineering (dbt). Possui vivência prática end-to-end que vai desde a ingestão em tempo real de telemetria de sensores IoT e modelos de previsão estatística (VAR) até a orquestração de pipelines complexos em batch (Airflow, Celery) e desenvolvimento de plataformas backend de alta performance (FastAPI, Flask, PostgreSQL, Google BigQuery, Playwright).
+Engenheira de Dados Sênior com sólida formação quantitativa em Ciências Econômicas e Econometria, especializada na construção de arquiteturas Data Lakehouse (Databricks, Google BigQuery), processamento distribuído de Big Data (PySpark, Delta Lake) e Analytics Engineering (dbt). Vivência prática em arquiteturas de alta performance e sistemas corporativos em produção, incluindo plataformas B2B multitenant com inteligência artificial generativa (Anthropic Claude AI), CRM integrado, campanhas multicanal (E-mail e WhatsApp), gestão de tarefas, orquestração de pipelines em batch/tempo real (Airflow, Celery) e microsserviços robustos (FastAPI, PostgreSQL, Playwright).
 
 COMPETÊNCIAS TÉCNICAS:
 - Big Data & Lakehouse: PySpark 3.5, Delta Lake, Databricks, Google BigQuery, Apache Spark (Tuning, Broadcast Joins, Partitioning)
 - Analytics Engineering & BI: dbt (Data Build Tool), Modelagem Dimensional, Star Schema, Kimball, Power BI, Looker Studio
-- Orquestração & Backend: Apache Airflow, Celery, Redis, FastAPI, Flask, Gunicorn, REST APIs, JWT Auth
-- DevOps & Cloud: Docker, Docker Compose, Git, GitHub Actions, CI/CD, Linux (SSH, Nginx)
+- Orquestração & Backend: Apache Airflow, Celery, Redis, FastAPI, Flask, Gunicorn, REST APIs, JWT Auth, Anthropic Claude API
+- DevOps & Cloud: Docker, Docker Compose, Git, GitHub Actions, CI/CD, Linux (SSH, Nginx), Vercel, Render
 - Bancos de Dados: PostgreSQL, Supabase, MariaDB, SQLAlchemy (ORM), SQLite
-- Web Scraping & Automação: Playwright, BeautifulSoup4, Requests, contorno anti-bot (Cloudflare), Google Apps Script, IA Generativa (Google Gemini API)
+- Web Scraping & Automação: Playwright, BeautifulSoup4, Requests, contorno anti-bot (Cloudflare), Google Apps Script, Google Gemini API
 
 EXPERIÊNCIA PROFISSIONAL:
 
-Engenheira de Dados / Desenvolvedora Full Stack — WhoDados (Cliente B2B: NRA Advocacia)
+Engenheira de Dados / Desenvolvedora Full Stack — WhoDados (Plataforma B2B em Produção para NRA Advocacia)
 fevereiro de 2026 – atual
-- Idealizei, desenvolvi e mantenho em produção a WhoDados, plataforma de Business Intelligence e investigação corporativa utilizada ativamente pelo escritório NRA Advocacia para pesquisa de empresas, análise de sócios e monitoramento de dívidas ativas federais.
-- Estruturei a arquitetura full-stack na nuvem utilizando Next.js (Vercel) no frontend, FastAPI com autenticação JWT (Render) no backend e PostgreSQL (Supabase) como banco relacional.
-- Desenvolvi pipelines de ETL automatizados em Python para ingestão, tratamento e consolidação de bases públicas federais (Receita Federal e PGFN), garantindo dados limpos e atualizados para tomada de decisão jurídica e comercial.
+- Idealizei, desenvolvi e mantenho em produção a WhoDados, plataforma B2B multitenant (multiempresa com controle hierárquico de acessos) utilizada ativamente pelo escritório NRA Advocacia para inteligência empresarial, investigação de sócios, sócios ocultos e dívidas ativas federais.
+- Integrei agentes da Anthropic Claude AI diretamente no ecossistema da aplicação para automação de pesquisas investigativas e análise de dados corporativos complexos.
+- Desenvolvi módulos completos de CRM, gestão de tarefas e automação de campanhas multicanal (disparo integrado de E-mail e WhatsApp).
+- Estruturei arquitetura em nuvem escalável com Next.js (Vercel) no frontend, FastAPI com autenticação JWT (Render) no backend e PostgreSQL relacional (Supabase) otimizado para múltiplos níveis hierárquicos.
 
 Engenheira de Dados Sênior / Desenvolvedora Backend — Sistema de Inteligência Imobiliária (Projeto Próprio)
 fevereiro de 2026 – atual

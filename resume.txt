@@ -1,46 +1,38 @@
 Jessica Van Klaveren
-Engenheira de Dados Sênior / Analytics Engineer
+Senior Data Engineer & Analytics Engineer
 klaverenjv@gmail.com   |   linkedin.com/in/jessicanolin   |   github.com/jklaveren   |   São Leopoldo, RS – Brasil
 
-RESUMO PROFISSIONAL:
-Engenheira de Dados Sênior com sólida formação quantitativa em Ciências Econômicas e Econometria, especializada na construção de arquiteturas Data Lakehouse (Databricks, Google BigQuery), processamento distribuído de Big Data (PySpark, Delta Lake) e Analytics Engineering (dbt). Vivência prática em arquiteturas de alta performance e sistemas corporativos em produção, incluindo plataformas B2B multitenant com inteligência artificial generativa (Anthropic Claude AI), CRM integrado, campanhas multicanal (E-mail e WhatsApp), gestão de tarefas, orquestração de pipelines em batch/tempo real (Airflow, Celery) e microsserviços robustos (FastAPI, PostgreSQL, Playwright).
+PROFESSIONAL SUMMARY:
+Senior Data Engineer with a strong quantitative background in Economics and Econometrics, specializing in end-to-end Cloud Data Lakehouse architectures (Databricks, Google BigQuery), distributed Big Data processing (PySpark 3.5, Delta Lake), and Analytics Engineering (dbt). Proven track record in designing high-throughput batch and real-time streaming pipelines, advanced time-series forecasting (VAR), data governance (LGPD), and robust workflow orchestration (Apache Airflow, Celery). Recognized for delivering scalable data platforms and analytical systems with zero downtime in production environments.
 
-COMPETÊNCIAS TÉCNICAS:
-- Big Data & Lakehouse: PySpark 3.5, Delta Lake, Databricks, Google BigQuery, Apache Spark (Tuning, Broadcast Joins, Partitioning)
-- Analytics Engineering & BI: dbt (Data Build Tool), Modelagem Dimensional, Star Schema, Kimball, Power BI, Looker Studio
-- Orquestração & Backend: Apache Airflow, Celery, Redis, FastAPI, Flask, Gunicorn, REST APIs, JWT Auth, Anthropic Claude API
+TECHNICAL SKILLS:
+- Big Data & Lakehouse: PySpark 3.5, Delta Lake, Databricks, Google BigQuery, Apache Spark (Performance Tuning, Broadcast Joins, Partition Pruning, Z-Ordering)
+- Analytics Engineering & BI: dbt (Data Build Tool), Dimensional Modeling, Star Schema, Kimball Architecture, Data Marts, Power BI, Looker Studio
+- Pipeline Orchestration & Backend: Apache Airflow, Celery, Redis, FastAPI, Flask, REST APIs, JWT Auth
 - DevOps & Cloud: Docker, Docker Compose, Git, GitHub Actions, CI/CD, Linux (SSH, Nginx), Vercel, Render
-- Bancos de Dados: PostgreSQL, Supabase, MariaDB, SQLAlchemy (ORM), SQLite
-- Web Scraping & Automação: Playwright, BeautifulSoup4, Requests, contorno anti-bot (Cloudflare), Google Apps Script, Google Gemini API
+- Databases & Storage: PostgreSQL, Supabase, MariaDB, SQLAlchemy (ORM), Parquet, Delta
+- Advanced Analytics & Testing: PyTest, Data Quality, Multivariate Time Series (VAR, statsmodels), Backtesting (RMSE, MAE, MAPE)
 
-EXPERIÊNCIA PROFISSIONAL:
+PROFESSIONAL EXPERIENCE:
 
-Engenheira de Dados / Desenvolvedora Full Stack — WhoDados (Plataforma B2B em Produção para NRA Advocacia)
-fevereiro de 2026 – atual
-- Idealizei, desenvolvi e mantenho em produção a WhoDados, plataforma B2B multitenant (multiempresa com controle hierárquico de acessos) utilizada ativamente pelo escritório NRA Advocacia para inteligência empresarial, investigação de sócios, sócios ocultos e dívidas ativas federais.
-- Integrei agentes da Anthropic Claude AI diretamente no ecossistema da aplicação para automação de pesquisas investigativas e análise de dados corporativos complexos.
-- Desenvolvi módulos completos de CRM, gestão de tarefas e automação de campanhas multicanal (disparo integrado de E-mail e WhatsApp).
-- Estruturei arquitetura em nuvem escalável com Next.js (Vercel) no frontend, FastAPI com autenticação JWT (Render) no backend e PostgreSQL relacional (Supabase) otimizado para múltiplos níveis hierárquicos.
-
-Engenheira de Dados Sênior / Desenvolvedora Backend — Sistema de Inteligência Imobiliária (Projeto Próprio)
-fevereiro de 2026 – atual
-- Arquitetuei e desenvolvi do zero uma plataforma de inteligência imobiliária e web scraping voltada para o mercado do Vale dos Sinos/RS. O sistema centraliza dados de portais nacionais (QuintoAndar, ZapImoveis, VivaReal com Playwright para contorno de Cloudflare) e de mais de 8 imobiliárias locais (Park, VilaRica, Objetiva, etc.).
-- Construí uma arquitetura assíncrona robusta em Python utilizando FastAPI, Celery e Redis para gerenciar workers paralelos de raspagem, com persistência e modelagem relacional otimizada em PostgreSQL (via SQLAlchemy).
-- Desenvolvi API RESTful completa com autenticação JWT e dashboards analíticos para monitoramento de métricas de mercado (preço médio por m², variação de ofertas e comportamento por bairro).
-
-Engenheira de Dados Sênior / Analytics Engineer — Infoccus Soluções Tecnológicas
-outubro de 2018 – presente
-- Atuação em projetos de engenharia de dados em larga escala, estruturando pipelines de Big Data em ambiente Data Lakehouse (PySpark 3.5 e Delta Lake) para o processamento de 242+ milhões de registros com técnicas de otimização de performance (partitioning, z-ordering, broadcast joins).
-- Implementação de modelagem dimensional (Star Schema e Data Marts) no Databricks utilizando dbt, assegurando confiabilidade analítica através de testes declarativos automatizados de schema e integridade.
-- Condução de projetos de governança de dados e conformidade estrita com a LGPD (Lei 13.709/2018), aplicando pseudonimização criptográfica em hash SHA-256 com Salt no NIS e remoção de PII nas camadas analíticas.
-- Orquestração de fluxos complexos de ETL em lote com Apache Airflow (Docker Compose) e automação de testes unitários (PyTest) via GitHub Actions (CI/CD).
-- Desenvolvimento de arquiteturas analíticas integradas ao Google BigQuery para processamento de dados corporativos e governamentais.
+Senior Data Engineer & Analytics Engineer — Infoccus Soluções Tecnológicas
+outubro de 2018 – presente (7+ anos de atuação em Engenharia de Dados e Lakehouse)
+- Arquitetuei, desenvolvi e escalei pipelines de Big Data em arquitetura Data Lakehouse utilizando PySpark 3.5 e Delta Lake, processando 242+ milhões de registros com otimização de performance (partition pruning, z-ordering, broadcast joins).
+- Implementei modelagem dimensional avançada (Star Schema, Kimball, Data Marts) no Databricks utilizando dbt, garantindo confiabilidade analítica e conformidade através de 13 testes declarativos automatizados de schema, unicidade e integridade.
+- Liderei iniciativas de governança de dados e conformidade estrita com a LGPD (Lei 13.709/2018), aplicando pseudonimização criptográfica (SHA-256 com Salt) no NIS e expurgo completo de PII em ambientes analíticos.
+- Orquestrei fluxos complexos de ETL em lote utilizando Apache Airflow (Docker Compose) e implementei testes unitários automatizados (PyTest) via GitHub Actions (CI/CD).
+- Desenvolvi plataformas corporativas de Business Intelligence e Data Warehousing integradas ao Google BigQuery, centralizando dados governamentais e corporativos para suporte à tomada de decisão de clientes B2B (como NRA Advocacia).
 
 Engenheira de Software — Dados & IoT — BRISA – Sociedade para o Desenvolvimento da Tecnologia da Informação
 novembro de 2025 – atual  ·  São Leopoldo, RS
 - Liderança técnica no desenvolvimento de pipelines de ingestão, processamento e armazenamento em tempo real de telemetria de sensores meteorológicos IoT.
-- Desenvolvimento e manutenção de modelos estatísticos e de previsão multivariada baseados em Vector Autoregression (VAR, statsmodels), incluindo um framework próprio de backtesting (RMSE, MAE, MAPE) com calibração contínua e re-treinamento automático.
-- Arquitetura de APIs REST em Flask/Python com autenticação JWT e operação de infraestrutura em servidores Linux remotos via Docker Compose, implementando health checks e auto-recuperação.
+- Concepção e manutenção de modelos preditivos e de previsão multivariada baseados em Vector Autoregression (VAR, statsmodels), implementando um framework próprio de backtesting (RMSE, MAE, MAPE) com calibração contínua.
+- Arquitetura de APIs REST em Flask/Python e operação de infraestrutura distribuída em servidores Linux remotos via Docker Compose (health checks e auto-recuperação).
+
+Desenvolvedora Backend & Engenheira de Dados — Sistema de Inteligência Imobiliária & Web Scraping (Projeto Próprio)
+fevereiro de 2026 – atual
+- Arquitetuei plataforma assíncrona de alta performance para extração e processamento de dados imobiliários em larga escala, integrando portais nacionais (QuintoAndar, ZapImoveis via Playwright para contorno de Cloudflare) e imobiliárias locais do RS.
+- Desenvolvi arquitetura distribuída com FastAPI, Celery e Redis para execução paralela de workers de raspagem, persistindo dados estruturados em banco relacional PostgreSQL otimizado por índices analíticos.
 
 IDIOMAS:
 - Inglês: Avançado / Fluente

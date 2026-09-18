@@ -3,17 +3,24 @@ Engenheira de Dados Sênior / Analytics Engineer
 klaverenjv@gmail.com   |   linkedin.com/in/jessicanolin   |   github.com/jklaveren   |   São Leopoldo, RS – Brasil
 
 RESUMO PROFISSIONAL:
-Engenheira de Dados Sênior com sólida experiência no desenvolvimento de arquiteturas Data Lakehouse em nuvem (Databricks), processamento distribuído de Big Data (PySpark, Delta Lake), Analytics Engineering (dbt) e orquestração avançada de pipelines (Apache Airflow, Docker, CI/CD). Especialista em modelagem dimensional (Star Schema/Kimball), otimização de performance em Spark, governança de dados (LGPD) e automação baseada em IA e LLMs.
+Engenheira de Dados Sênior com sólida experiência no desenvolvimento de arquiteturas Data Lakehouse em nuvem (Databricks), processamento distribuído de Big Data (PySpark, Delta Lake), Analytics Engineering (dbt), orquestração avançada de pipelines (Airflow, Celery) e sistemas de alta performance (FastAPI, PostgreSQL, Docker, Playwright). Especialista em modelagem dimensional (Star Schema/Kimball), engenharia de dados em larga escala, web scraping avançado, governança de dados (LGPD) e automação baseada em IA e LLMs.
 
 COMPETÊNCIAS TÉCNICAS:
-- Big Data & Lakehouse: PySpark 3.5, Delta Lake, Databricks, Apache Spark (Tuning, Broadcast Joins, Partitioning), Hive
-- Analytics Engineering: dbt (Data Build Tool), Modelagem Dimensional, Star Schema, Kimball, Data Marts
-- Orquestração & DevOps: Apache Airflow, Docker, Docker Compose, Git, GitHub Actions, CI/CD, Linux
-- Linguagens & Banco de Dados: Python, SQL Avançado, PostgreSQL, Supabase, MariaDB, MySQL, SQLAlchemy
-- Testes & Qualidade: PyTest, Testes Unitários, Testes Declarativos dbt, Data Quality
-- IA & Modelagem: Google Gemini API, Streamlit, Pandas, Scikit-learn, Statsmodels (VAR, Backtesting, RMSE/MAE/MAPE)
+- Big Data & Lakehouse: PySpark 3.5, Delta Lake, Databricks, Google BigQuery, Apache Spark (Tuning, Broadcast Joins, Partitioning)
+- Analytics Engineering & BI: dbt (Data Build Tool), Modelagem Dimensional, Star Schema, Kimball, Power BI, Looker Studio
+- Orquestração & Backend: Apache Airflow, Celery, Redis, FastAPI, Flask, Gunicorn, REST APIs, JWT Auth
+- DevOps & Cloud: Docker, Docker Compose, Git, GitHub Actions, CI/CD, Linux (SSH, Nginx)
+- Bancos de Dados: PostgreSQL, Supabase, MariaDB, SQLAlchemy (ORM), SQLite
+- Web Scraping & Automação: Playwright, BeautifulSoup4, Requests, contorno anti-bot (Cloudflare), Google Apps Script, IA Generativa (Google Gemini API)
 
 EXPERIÊNCIA PROFISSIONAL:
+
+Engenheira de Dados Sênior / Desenvolvedora Backend — Sistema de Inteligência Imobiliária (Projeto Próprio)
+fevereiro de 2026 – atual
+- Arquitetuei e desenvolvi plataforma completa de inteligência imobiliária e web scraping para a região do Vale dos Sinos/RS, centralizando dados de portais nacionais (QuintoAndar, ZapImoveis, VivaReal via Playwright para contorno de Cloudflare) e 8+ imobiliárias locais (Park, VilaRica, Objetiva, etc.).
+- Desenvolvi arquitetura assíncrona robusta em Python (FastAPI, Celery, Redis) para execução paralela de workers de scraping e persistência em banco de dados relacional (PostgreSQL via SQLAlchemy).
+- Modelei o banco de dados relacional com tabelas otimizadas para imóveis, usuários (JWT Auth), alertas automáticos de novos imóveis e logs de execução.
+- Desenvolvi API RESTful completa e dashboard analítico para métricas de mercado imobiliário (preço médio por m², distribuição por bairro, variação de ofertas).
 
 Engenheira de Dados Sênior / Analytics Engineer — Infoccus Soluções Tecnológicas
 outubro de 2018 – presente (Atuação em projetos de Big Data e Lakehouse)
@@ -21,17 +28,13 @@ outubro de 2018 – presente (Atuação em projetos de Big Data e Lakehouse)
 - Implementei modelagem dimensional (Star Schema e Data Marts) no Databricks utilizando dbt, garantindo qualidade de dados através de 13 testes declarativos de schema e integridade.
 - Conduzi a governança de dados e conformidade com a LGPD (Lei 13.709/2018), aplicando pseudonimização criptográfica (SHA-256 com Salt) no NIS e expurgo completo de PII nas camadas analíticas.
 - Orquestrei fluxos complexos de ETL em lote utilizando Apache Airflow (Docker Compose) e implementei testes unitários automatizados com PyTest e GitHub Actions (CI/CD).
-- Desenvolvi análises exploratórias avançadas em SQL e criei dashboards executivos em Power BI e Looker Studio.
+- Idealizei e mantenho plataforma de BI em produção utilizando FastAPI, Next.js e Google BigQuery como data warehouse, integrada a dados públicos da Receita Federal com ETL automatizado.
 
 Engenheira de Software — Dados & IoT — BRISA – Sociedade para o Desenvolvimento da Tecnologia da Informação
 novembro de 2025 – atual  ·  São Leopoldo, RS
 - Lidero o desenvolvimento de pipelines de dados para captação, tratamento e armazenamento de telemetria de sensores IoT em tempo real.
 - Desenvolvi e mantenho modelos de previsão multivariada com VAR (statsmodels) e framework de backtesting (RMSE, MAE, MAPE) com re-treinamento automático.
 - Arquitetuei APIs REST em Flask/Python com autenticação JWT e realizei o deploy/operação em servidores Linux remotos via Docker Compose com health checks e auto-recuperação.
-
-Desenvolvedora Full Stack — WhoDados (Projeto Próprio)
-fevereiro de 2026 – atual
-- Idealizei e mantenho plataforma de BI em produção (FastAPI, Next.js, PostgreSQL/Supabase) integrada a dados públicos da Receita Federal com ETL automatizado via GitHub Actions.
 
 IDIOMAS:
 - Inglês: Avançado / Fluente

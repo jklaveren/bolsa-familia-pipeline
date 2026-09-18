@@ -55,3 +55,13 @@ Segunda Licenciatura em Matemática (em andamento)  |  Faculdade IBRA  ·  concl
 MBA em Ciência de Dados — Modelagem de Dados/Armazenagem e Administração de Banco de Dados  |  Faculdade Metropolitana  ·  2021 – 2022
 Bacharelado em Ciências Econômicas — Econometria e Economia Quantitativa  |  Centro Universitário FMU | FIAM-FAAM  ·  2011 – 2015
 Pós-graduação MBA em Gestão Estratégica de Negócios  |  Centro Universitário FMU | FIAM-FAAM  ·  2016 – 2017
+
+
+PROJETO DE ENGENHARIA DE DADOS (Portfólio & Produção):
+Pipeline de Dados End-to-End & Lakehouse (Novo Bolsa Família / CGU)
+- Arquitetura Medalhão (Bronze, Silver, Gold) em PySpark 3.5 e Delta Lake, processando 242+ milhões de registros de microdados governamentais.
+- Governança e LGPD: Pseudonimização de PII (NIS) via SHA-256 com Salt criptográfico e expurgo de dados sensíveis na camada Silver.
+- Analytics Engineering: Modelagem dimensional (Staging e Marts) no Databricks utilizando dbt, com 13 testes declarativos automatizados.
+- Orquestração & DevOps: Pipeline orquestrado via Apache Airflow (Docker Compose) e CI/CD contínuo em GitHub Actions.
+- Machine Learning & IA: Modelagem preditiva de séries temporais (VAR vs Machine Learning) e integração com Google Gemini (LLM) para automação de ATS.
+Stack: Python, PySpark, Delta Lake, dbt, Databricks, Apache Airflow, Docker, SQL, GitHub Actions, Google Gemini API.

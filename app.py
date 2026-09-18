@@ -11,7 +11,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from src.job_analyzer.matcher import analyze_job_match
+from src.job_analyzer.matcher import analyze_job_match, tailor_resume, generate_cover_letter
 
 st.set_page_config(
     page_title="Pipeline Novo Bolsa Família | Data Hub & AI",
@@ -233,8 +233,8 @@ elif selected_tab == "📈 Machine Learning & Forecast":
         )
 
 elif selected_tab == "🤖 AI Job Matcher (ATS)":
-    st.markdown("### 🤖 Assistente de Carreira com Google Gemini (ATS Matcher)")
-    st.markdown("Cole o seu currículo e a descrição de uma vaga de Engenharia de Dados para calcular o *match* e receber sugestões de otimização ATS.")
+    st.markdown("### 🤖 Assistente de Carreira com Google Gemini (ATS Matcher & Otimizador)")
+    st.markdown("Use a IA para analisar compatibilidade, reescrever seu currículo otimizado para ATS e gerar cartas de apresentação.")
     
     col_a, col_b = st.columns(2)
     with col_a:
@@ -242,7 +242,7 @@ elif selected_tab == "🤖 AI Job Matcher (ATS)":
         if os.path.exists("resume.txt"):
             with open("resume.txt", "r", encoding="utf-8") as f:
                 default_resume = f.read()
-        resume_input = st.text_area("📄 Seu Currículo (Texto)", value=default_resume, height=250)
+        resume_input = st.text_area("📄 Seu Currículo (Extraído do docx)", value=default_resume, height=250)
         
     with col_b:
         default_job = ""
@@ -253,18 +253,45 @@ elif selected_tab == "🤖 AI Job Matcher (ATS)":
         
     api_key_input = st.text_input("🔑 Google Gemini API Key (Deixe em branco se configurada no ambiente)", type="password")
     
-    if st.button("🚀 Analisar Compatibilidade com IA", type="primary"):
-        if not resume_input or not job_input:
-            st.warning("Por favor, preencha o currículo e a descrição da vaga.")
-        else:
-            with st.spinner("Analisando currículo com Google Gemini..."):
-                try:
-                    key = api_key_input.strip() if api_key_input else os.getenv("GEMINI_API_KEY")
-                    resultado = analyze_job_match(resume_input, job_input, api_key=key)
-                    st.markdown("### 🎯 Resultado da Análise ATS")
-                    st.markdown(resultado)
-                except Exception as e:
-                    st.error(f"Erro ao executar a análise: {e}")
+    tab_ai1, tab_ai2, tab_ai3 = st.tabs(["🎯 1. Análise de Match & Recomendações", "✍️ 2. Currículo Otimizado (Tailored)", "✉️ 3. Carta de Apresentação"])
+    
+    key = api_key_input.strip() if api_key_input else os.getenv("GEMINI_API_KEY")
+
+    with tab_ai1:
+        if st.button("🚀 Executar Análise de Match", type="primary"):
+            if not resume_input or not job_input:
+                st.warning("Preencha o currículo e a descrição da vaga.")
+            else:
+                with st.spinner("Analisando compatibilidade ATS com Gemini..."):
+                    try:
+                        res = analyze_job_match(resume_input, job_input, api_key=key)
+                        st.markdown(res)
+                    except Exception as e:
+                        st.error(f"Erro: {e}")
+
+    with tab_ai2:
+        if st.button("✍️ Gerar Currículo Otimizado para esta Vaga", type="primary"):
+            if not resume_input or not job_input:
+                st.warning("Preencha o currículo e a descrição da vaga.")
+            else:
+                with st.spinner("Reescrevendo e otimizando currículo com Gemini..."):
+                    try:
+                        res = tailor_resume(resume_input, job_input, api_key=key)
+                        st.markdown(res)
+                    except Exception as e:
+                        st.error(f"Erro: {e}")
+
+    with tab_ai3:
+        if st.button("✉️ Gerar Carta de Apresentação", type="primary"):
+            if not resume_input or not job_input:
+                st.warning("Preencha o currículo e a descrição da vaga.")
+            else:
+                with st.spinner("Escrevendo carta de apresentação com Gemini..."):
+                    try:
+                        res = generate_cover_letter(resume_input, job_input, api_key=key)
+                        st.markdown(res)
+                    except Exception as e:
+                        st.error(f"Erro: {e}")
 
 elif selected_tab == "💻 Código & Componentes":
     st.markdown("### 💻 Componentes de Código do Pipeline")

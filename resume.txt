@@ -1,0 +1,11 @@
+Jessica Van Klaveren
+Engenheira de Dados Pleno / Analytics Engineer
+
+EXPERIÊNCIA:
+- Pipeline de Dados Novo Bolsa Família: Ingestão e limpeza em PySpark, Delta Lake, transformação com dbt-databricks, orquestração em Apache Airflow (Docker Compose), CI/CD no GitHub Actions.
+- Tratamento e pseudonimização de PII (LGPD) via SHA-256.
+- Modelagem analítica dimensional (Layer Staging e Marts).
+- Previsão de séries temporais (VAR vs Machine Learning em Python).
+
+STACK:
+Python, PySpark, Delta Lake, dbt, Databricks, Apache Airflow, SQL, Docker, Git, CI/CD, pytest.

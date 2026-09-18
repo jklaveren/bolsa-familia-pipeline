@@ -7,6 +7,7 @@ dbt-databricks==1.8.4
 requests==2.32.3
 python-dotenv==1.0.1
 pandas==2.1.4
+google-generativeai==0.8.3
 
 # testes
 pytest==8.3.2

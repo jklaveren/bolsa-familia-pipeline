@@ -3,7 +3,7 @@ Engenheira de Dados Sênior / Analytics Engineer
 klaverenjv@gmail.com   |   linkedin.com/in/jessicanolin   |   github.com/jklaveren   |   São Leopoldo, RS – Brasil
 
 RESUMO PROFISSIONAL:
-Engenheira de Dados Sênior com sólida formação quantitativa em Ciências Econômicas e Econometria, especializada na construção de arquiteturas Data Lakehouse (Databricks, Google BigQuery), processamento distribuído de Big Data (PySpark, Delta Lake) e Analytics Engineering (dbt). Possui vivência prática end-to-end que vai desde a ingestão em tempo real de telemetria de sensores IoT e modelos de previsão estatística (VAR) até a orquestração de pipelines complexos em batch (Airflow, Celery) e desenvolvimento de plataformas backend de alta performance (FastAPI, Flask, PostgreSQL, Playwright).
+Engenheira de Dados Sênior com sólida formação quantitativa em Ciências Econômicas e Econometria, especializada na construção de arquiteturas Data Lakehouse (Databricks, Google BigQuery), processamento distribuído de Big Data (PySpark, Delta Lake) e Analytics Engineering (dbt). Possui vivência prática end-to-end que vai desde a ingestão em tempo real de telemetria de sensores IoT e modelos de previsão estatística (VAR) até a orquestração de pipelines complexos em batch (Airflow, Celery) e desenvolvimento de plataformas backend de alta performance (FastAPI, Flask, PostgreSQL, Google BigQuery, Playwright).
 
 COMPETÊNCIAS TÉCNICAS:
 - Big Data & Lakehouse: PySpark 3.5, Delta Lake, Databricks, Google BigQuery, Apache Spark (Tuning, Broadcast Joins, Partitioning)
@@ -14,6 +14,12 @@ COMPETÊNCIAS TÉCNICAS:
 - Web Scraping & Automação: Playwright, BeautifulSoup4, Requests, contorno anti-bot (Cloudflare), Google Apps Script, IA Generativa (Google Gemini API)
 
 EXPERIÊNCIA PROFISSIONAL:
+
+Engenheira de Dados / Desenvolvedora Full Stack — WhoDados (Plataforma de BI & Dados Públicos)
+fevereiro de 2026 – atual
+- Idealizei, desenvolvi e mantenho a WhoDados, plataforma de Business Intelligence em produção utilizada para pesquisa de empresas, investigação de sócios e visualização de dados públicos federais.
+- Estruturei a arquitetura em nuvem utilizando FastAPI com autenticação JWT no backend e Google BigQuery como Data Warehouse corporativo para processamento analítico de grandes volumes.
+- Desenvolvi pipelines de ETL automatizados para ingestão, tratamento e consolidação de dados públicos da Receita Federal e órgãos governamentais, garantindo consistência e disponibilidade para consulta.
 
 Engenheira de Dados Sênior / Desenvolvedora Backend — Sistema de Inteligência Imobiliária (Projeto Próprio)
 fevereiro de 2026 – atual

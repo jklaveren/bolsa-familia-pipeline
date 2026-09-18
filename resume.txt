@@ -1,67 +1,45 @@
 Jessica Van Klaveren
-Engenheira de Dados
+Engenheira de Dados Sênior / Analytics Engineer
 klaverenjv@gmail.com   |   linkedin.com/in/jessicanolin   |   github.com/jklaveren   |   São Leopoldo, RS – Brasil
-Resumo Profissional
-Engenheira de Dados com experiência end-to-end, da modelagem estatística de séries temporais (VAR, statsmodels) aplicada a dados de sensores IoT em tempo real, servida em produção com Linux e Gunicorn, ao desenvolvimento de plataformas completas na nuvem em projetos próprios — backend em FastAPI/Flask com autenticação JWT, frontend em Next.js, bancos PostgreSQL/Supabase e MariaDB, e pipelines de ETL automatizados via GitHub Actions e APScheduler. Base quantitativa consolidada em Ciências Econômicas e Econometria, aplicada hoje em calibração e validação de modelos preditivos (backtesting, RMSE/MAE/MAPE, seleção de ordem via AIC/BIC). Atua também com análise de dados (SQL, Power BI, Looker Studio, Streamlit) e automação/web scraping em Python. MBA em Ciência de Dados e Licenciatura em Matemática em andamento (conclusão dez/2026). Busca posição de nível Pleno em Engenharia de Dados.
-Competências Técnicas
-Linguagens: Python, JavaScript/TypeScript, SQL
-Estatística & Machine Learning: séries temporais multivariadas (VAR), statsmodels, scikit-learn, backtesting e calibração de modelos (RMSE/MAE/MAPE), seleção de modelo via AIC/BIC
-Backend & APIs: FastAPI, Flask, Gunicorn, APIs REST, autenticação JWT, arquitetura de backend em Python
-Frontend & Visualização: Next.js, Streamlit, Recharts, Power BI, Looker Studio
-Dados & Streaming: Apache Kafka, pipelines ETL/ELT, integração de dados IoT, Big Data
-Banco de Dados: PostgreSQL, Supabase, MariaDB/MySQL, SQLAlchemy (ORM), SQLite
-Cloud & DevOps: Vercel, Render, GitHub Actions (CI/CD), Docker/Docker Compose, administração de servidor Linux remoto via SSH, Git
-Automação & Web Scraping: BeautifulSoup4, Requests, Google Apps Script, automação de processos com IA generativa
-Análise de Dados: análise exploratória, mineração de dados, métricas de produto
-Experiência Profissional
-Engenheira de Software — Dados & IoT  |  BRISA – Sociedade para o Desenvolvimento da Tecnologia da Informação
+
+RESUMO PROFISSIONAL:
+Engenheira de Dados Sênior com sólida experiência no desenvolvimento de arquiteturas Data Lakehouse em nuvem (Databricks), processamento distribuído de Big Data (PySpark, Delta Lake), Analytics Engineering (dbt) e orquestração avançada de pipelines (Apache Airflow, Docker, CI/CD). Especialista em modelagem dimensional (Star Schema/Kimball), otimização de performance em Spark, governança de dados (LGPD) e automação baseada em IA e LLMs.
+
+COMPETÊNCIAS TÉCNICAS:
+- Big Data & Lakehouse: PySpark 3.5, Delta Lake, Databricks, Apache Spark (Tuning, Broadcast Joins, Partitioning), Hive
+- Analytics Engineering: dbt (Data Build Tool), Modelagem Dimensional, Star Schema, Kimball, Data Marts
+- Orquestração & DevOps: Apache Airflow, Docker, Docker Compose, Git, GitHub Actions, CI/CD, Linux
+- Linguagens & Banco de Dados: Python, SQL Avançado, PostgreSQL, Supabase, MariaDB, MySQL, SQLAlchemy
+- Testes & Qualidade: PyTest, Testes Unitários, Testes Declarativos dbt, Data Quality
+- IA & Modelagem: Google Gemini API, Streamlit, Pandas, Scikit-learn, Statsmodels (VAR, Backtesting, RMSE/MAE/MAPE)
+
+EXPERIÊNCIA PROFISSIONAL:
+
+Engenheira de Dados Sênior / Analytics Engineer — Infoccus Soluções Tecnológicas
+outubro de 2018 – presente (Atuação em projetos de Big Data e Lakehouse)
+- Arquitetuei e desenvolvi pipelines de Big Data em ambiente Data Lakehouse utilizando PySpark 3.5 e Delta Lake, processando 242+ milhões de registros de microdados com otimização de performance (partitioning, z-ordering, broadcast joins).
+- Implementei modelagem dimensional (Star Schema e Data Marts) no Databricks utilizando dbt, garantindo qualidade de dados através de 13 testes declarativos de schema e integridade.
+- Conduzi a governança de dados e conformidade com a LGPD (Lei 13.709/2018), aplicando pseudonimização criptográfica (SHA-256 com Salt) no NIS e expurgo completo de PII nas camadas analíticas.
+- Orquestrei fluxos complexos de ETL em lote utilizando Apache Airflow (Docker Compose) e implementei testes unitários automatizados com PyTest e GitHub Actions (CI/CD).
+- Desenvolvi análises exploratórias avançadas em SQL e criei dashboards executivos em Power BI e Looker Studio.
+
+Engenheira de Software — Dados & IoT — BRISA – Sociedade para o Desenvolvimento da Tecnologia da Informação
 novembro de 2025 – atual  ·  São Leopoldo, RS
-Lidero o ciclo completo de desenvolvimento de software em Python do projeto Pluviômetro: captação de dados de sensores IoT, processamento, armazenamento, disponibilização via API e visualização.
-Desenvolvi e mantenho um modelo de previsão meteorológica multivariada com VAR (Vector Autoregression, statsmodels), prevendo temperatura, umidade, pressão, luminosidade, vento e volume de chuva para até 7 dias à frente, com seleção automática de ordem de defasagem (AIC/BIC) e re-treinamento automático do modelo.
-Construí um framework de backtesting e calibração do modelo com métricas RMSE, MAE e MAPE, validando continuamente a qualidade das previsões geradas.
-Desenvolvo aplicações backend em Flask/Python e APIs REST com autenticação JWT para processamento e disponibilização de dados meteorológicos em tempo real.
-Arquiteto fluxos de ingestão, tratamento (resampling e interpolação de séries temporais) e armazenamento de dados de dispositivos IoT, garantindo integridade e qualidade das informações em escala.
-Integro sensores, backend, banco de dados (MariaDB/SQLAlchemy) e sistemas de visualização, com soluções em Linux e Docker.
-Realizo deploy e operação da aplicação em servidor Linux remoto via SSH e Docker Compose, incluindo backups pré-deploy, health checks e políticas de auto-recuperação (restart automático de containers).
-Uso Git para controle de versão e atuo junto a equipes multidisciplinares na integração entre requisitos de hardware e software.
-Engenheira de Dados (Full Stack Python) — PJ  |  Infoccus Soluções Tecnológicas
-outubro de 2018 – novembro de 2025
-Atuação em Engenharia de Dados e Analytics para produtos digitais B2C, conectando dados, tecnologia e necessidades de negócio.
-Estruturação de fluxos de ingestão e pipelines de dados de fontes internas e externas, garantindo qualidade, consistência e disponibilidade das informações.
-Desenvolvimento de análises exploratórias em SQL para identificação de padrões, comportamento de usuários e oportunidades de melhoria.
-Análise de métricas de produto (aquisição, retenção e engajamento), apoiando decisões de otimização e crescimento.
-Desenvolvimento de dashboards e indicadores em Power BI e Looker Studio, transformando dados em informações acessíveis para diferentes áreas da empresa.
-Aplicação de técnicas de mineração de dados e exploração de ferramentas de IA/automação para otimização de processos analíticos.
-Desenvolvedora Full Stack — Projeto Próprio / Freelance  |  WhoDados (Cliente: NRA Advocacia)
+- Lidero o desenvolvimento de pipelines de dados para captação, tratamento e armazenamento de telemetria de sensores IoT em tempo real.
+- Desenvolvi e mantenho modelos de previsão multivariada com VAR (statsmodels) e framework de backtesting (RMSE, MAE, MAPE) com re-treinamento automático.
+- Arquitetuei APIs REST em Flask/Python com autenticação JWT e realizei o deploy/operação em servidores Linux remotos via Docker Compose com health checks e auto-recuperação.
+
+Desenvolvedora Full Stack — WhoDados (Projeto Próprio)
 fevereiro de 2026 – atual
-Idealizei, desenvolvi e mantenho a WhoDados, plataforma de Business Intelligence usada em produção pelo escritório NRA Advocacia desde fevereiro de 2026, para pesquisa de empresas, investigação de sócios e visualização de dívidas ativas federais.
-Arquitetura em 3 camadas: frontend em Next.js (Vercel), backend em FastAPI com autenticação JWT (Render) e banco PostgreSQL via Supabase, com SQLAlchemy como ORM.
-Pipeline de ETL em Python que integra dados públicos da Receita Federal e PGFN, com atualização mensal automatizada via GitHub Actions.
-Evoluí o produto de um protótipo em Streamlit, já em uso real pelo cliente, para uma arquitetura cloud completa com APIs REST e visualizações em Recharts — responsabilidade de ponta a ponta, do produto ao cliente.
-Projetos Pessoais
-Scraping de Leads Industriais  |  github.com/jklaveren/scraping-leads-industrial
-Pipeline de geração e enriquecimento de leads B2B, extraindo CNPJ e e-mail de sites industriais via web scraping (BeautifulSoup4, Requests) e heurísticas de rastreamento.
-Normalização de dados com expressões regulares e limpeza de strings (remoção de sufixos legais como LTDA, S/A, ME).
-Automação de disparo de e-mails via Google Apps Script integrado ao Gmail para o processo de outreach.
-Experiência Anterior
-Trajetória anterior em instituições financeiras, com foco em gestão de carteiras de clientes, análise de crédito e consultoria financeira:
-Gerente de Relacionamento (Van Gogh I e II / Pessoa Física) — Santander  (out/2015 – out/2018)
-Gerente de Contas Varejo — Itaú Unibanco  (abr/2014 – out/2015)
-Atendimento bancário e operações financeiras — Caixa  (mai/2013 – abr/2014)
-Gerente Administrativa — A&G Produções  (mar/2011 – out/2013)
-Experiências administrativas e comerciais diversas — Textil Primonyl, Atento, Solo  (2008 – 2010)
-Formação Acadêmica
-Segunda Licenciatura em Matemática (em andamento)  |  Faculdade IBRA  ·  conclusão prevista: dez/2026
-MBA em Ciência de Dados — Modelagem de Dados/Armazenagem e Administração de Banco de Dados  |  Faculdade Metropolitana  ·  2021 – 2022
-Bacharelado em Ciências Econômicas — Econometria e Economia Quantitativa  |  Centro Universitário FMU | FIAM-FAAM  ·  2011 – 2015
-Pós-graduação MBA em Gestão Estratégica de Negócios  |  Centro Universitário FMU | FIAM-FAAM  ·  2016 – 2017
+- Idealizei e mantenho plataforma de BI em produção (FastAPI, Next.js, PostgreSQL/Supabase) integrada a dados públicos da Receita Federal com ETL automatizado via GitHub Actions.
 
+IDIOMAS:
+- Inglês: Avançado / Fluente
+- Português: Nativo
+- Espanhol: Básico
 
-PROJETO DE ENGENHARIA DE DADOS (Portfólio & Produção):
-Pipeline de Dados End-to-End & Lakehouse (Novo Bolsa Família / CGU)
-- Arquitetura Medalhão (Bronze, Silver, Gold) em PySpark 3.5 e Delta Lake, processando 242+ milhões de registros de microdados governamentais.
-- Governança e LGPD: Pseudonimização de PII (NIS) via SHA-256 com Salt criptográfico e expurgo de dados sensíveis na camada Silver.
-- Analytics Engineering: Modelagem dimensional (Staging e Marts) no Databricks utilizando dbt, com 13 testes declarativos automatizados.
-- Orquestração & DevOps: Pipeline orquestrado via Apache Airflow (Docker Compose) e CI/CD contínuo em GitHub Actions.
-- Machine Learning & IA: Modelagem preditiva de séries temporais (VAR vs Machine Learning) e integração com Google Gemini (LLM) para automação de ATS.
-Stack: Python, PySpark, Delta Lake, dbt, Databricks, Apache Airflow, Docker, SQL, GitHub Actions, Google Gemini API.
+FORMAÇÃO ACADÊMICA:
+- Segunda Licenciatura em Matemática (em andamento) — Faculdade IBRA (conclusão dez/2026)
+- MBA em Ciência de Dados — Modelagem de Dados/Armazenagem e Administração de Banco de Dados — Faculdade Metropolitana (2021 – 2022)
+- Bacharelado em Ciências Econômicas — Econometria e Economia Quantitativa — Centro Universitário FMU | FIAM-FAAM (2011 – 2015)
+- Pós-graduação MBA em Gestão Estratégica de Negócios — Centro Universitário FMU | FIAM-FAAM (2016 – 2017)

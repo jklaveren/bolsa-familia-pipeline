@@ -13,4 +13,4 @@ RUN apt-get update && \
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
 USER airflow
-RUN pip install --no-cache-dir pyspark==3.5.1 delta-spark==3.2.0 dbt-databricks==1.8.4
+RUN pip install --no-cache-dir pyspark==3.5.1 delta-spark==3.2.0 dbt-databricks==1.8.4 google-generativeai==0.8.3 python-dotenv==1.0.1
